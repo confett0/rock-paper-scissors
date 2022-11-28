@@ -10,6 +10,7 @@ function getComputerChoice() {
 }
 
 const computerSelection = getComputerChoice();
+let playerSelection = prompt("Choose Rock, Paper or Scissors!", "");
 
 // Play a round 
 
@@ -58,8 +59,6 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = "Rock";
-//const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
 // Keep score
