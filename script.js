@@ -13,34 +13,43 @@ const computerSelection = getComputerChoice();
 
 // Play a round 
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
 
     if (computerSelection === 'Rock') {
 
         if (playerSelection == 'Rock') {
-            return "It's tie! Rock ties with rock.";
+            return "It's a tie! Rock ties with rock.";
         } else if (playerSelection == 'Paper') {
-            return "You win! Paper beats rock.";
+            playerScore++;
+            return "You win!";
         } else if (playerSelection == 'Scissors') {
-            return "You lose! Rock beats scissors.";
+            computerScore++;
+            return "You lose!";
         }
 
     } else if (computerSelection === 'Paper') {
 
         if (playerSelection == 'Rock') {
-            return "You lose! Paper beats rock.";
+            computerScore++;
+            return "You lose!";
         } else if (playerSelection == 'Paper') {
             return "It's tie! Paper ties with paper.";
         } else if (playerSelection == 'Scissors') {
-            return "You win! Scissors beats paper.";
+            playerScore++;
+            return "You win!";
         }
 
     } else if (computerSelection === 'Scissors') {
 
         if (playerSelection == 'Rock') {
-            return "You win! Rock beats scissors.";
+            playerScore++;
+            return "You win!";
         } else if (playerSelection == 'Paper') {
-            return "You lose! Scissors beats paper.";
+            computerScore++;
+            return "You lose!";
         } else if (playerSelection == 'Scissors') {
             return "It's a tie! Scissors ties with scissors.";
         }
@@ -52,3 +61,20 @@ function playRound(playerSelection, computerSelection) {
 const playerSelection = "Rock";
 //const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+
+// Keep score
+
+
+
+/*function game() {
+
+    if (playRound((playerSelection, computerSelection)) === "You win!") {
+        return playerScore += 1;
+    } else if (playRound((playerSelection, computerSelection)) === "You lose!") {
+        return computerScore += 1;
+    }
+
+}*/
+
+console.log(playerScore);
+console.log(computerScore);
