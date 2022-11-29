@@ -21,6 +21,9 @@ function getPlayerChoice() {
 
 // Win round
 
+let computerScore = 0;
+let playerScore = 0;
+
 function winRound(computerChoice, playerChoice) {
 
     if (computerChoice === playerChoice) {
@@ -29,8 +32,10 @@ function winRound(computerChoice, playerChoice) {
         playerChoice === "rock" && computerChoice === "scissors" ||
         playerChoice === "paper" && computerChoice === "rock" ||
         playerChoice === "scissors" && computerChoice === "paper") {
+            playerScore++;
         return "You win!";
     } else {
+        computerScore++;
         return "You lose!";
     }
 
@@ -53,6 +58,14 @@ function game() {
     for (let i = 0; i < 5; i++) {
     playRound();
 }
+if (playerScore > computerScore) {
+    console.log("You win!");
+} else if (computerScore > playerScore) {
+    console.log("You lose!");
+} else {
+    console.log("It's a tie");
+}
+console.log(`Score: ${playerScore} - ${computerScore}`)
 }
 
 game();
