@@ -2,22 +2,19 @@
 
 // Get computer choice
 
-let choices = ['rock', 'paper', 'scissors'];
+
 
 function getComputerChoice() {
-
+    let choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor((Math.random() * 3))];
 }
 
-
 // Get player choice 
-
 
 function getPlayerChoice() {
     let input = prompt("Choose Rock, Paper or Scissors!");
     return input = input.toLowerCase();
 }
-
 
 // Win round
 
@@ -32,7 +29,7 @@ function winRound(computerChoice, playerChoice) {
         playerChoice === "rock" && computerChoice === "scissors" ||
         playerChoice === "paper" && computerChoice === "rock" ||
         playerChoice === "scissors" && computerChoice === "paper") {
-            playerScore++;
+        playerScore++;
         return "You win!";
     } else {
         computerScore++;
@@ -52,20 +49,20 @@ function playRound() {
 
 }
 
-// Play a game with 5 rounds
+// Play a game with 5 rounds and log final score
 
 function game() {
     for (let i = 0; i < 5; i++) {
-    playRound();
-}
-if (playerScore > computerScore) {
-    console.log("You win!");
-} else if (computerScore > playerScore) {
-    console.log("You lose!");
-} else {
-    console.log("It's a tie");
-}
-console.log(`Score: ${playerScore} - ${computerScore}`)
+        playRound();
+    }
+    if (playerScore > computerScore) {
+        console.log("You win!");
+    } else if (computerScore > playerScore) {
+        console.log("You lose!");
+    } else {
+        console.log("It's a tie!");
+    }
+    console.log(`Score: ${playerScore} - ${computerScore}`)
 }
 
 game();
