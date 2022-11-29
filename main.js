@@ -30,10 +30,10 @@ function winRound(computerChoice, playerChoice) {
         playerChoice === "paper" && computerChoice === "rock" ||
         playerChoice === "scissors" && computerChoice === "paper") {
         playerScore++;
-        return "You win!";
+        return "You win this round!";
     } else {
         computerScore++;
-        return "You lose!";
+        return "You lose this round!";
     }
 
 }
