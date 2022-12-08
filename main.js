@@ -9,6 +9,7 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const result = document.getElementById('results');
+const startButton = document.getElementById('start');
 
 // Get computer choice
 
@@ -75,21 +76,29 @@ rock.onclick = (e) => {
     }
 };
 paper.onclick = (e) => {
-        if (currentlyPlaying) {
-            playRound(e);
-        }
-    };
+    if (currentlyPlaying) {
+        playRound(e);
+    }
+};
 scissors.onclick = (e) => {
     if (currentlyPlaying) {
         playRound(e);
     }
 };
 
-//rock.addEventListener('click',playRound);
-//paper.addEventListener('click',playRound);
-//scissors.addEventListener('click',playRound);
+startButton.onclick = () => {
+    if (!currentlyPlaying) {
+      startOver();
+    }
+  };
 
-//function gameOver that resets game, add if/else to onclick functions
+function startOver() {
+    computerScore = 0;
+    playerScore = 0;
+    currentlyPlaying = true;
+    startButton.innerText = "Good luck!"
+    getComputerChoice();
+}
 
 function gameOver(status) {
     if (status === 'win') {
@@ -98,5 +107,9 @@ function gameOver(status) {
         console.log("You lost the game!")
     }
     currentlyPlaying = false;
-
+    startButton.innerText = "Play again?"
 }
+
+startOver();
+
+// log results in document div instead of console
