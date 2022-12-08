@@ -37,33 +37,33 @@ function winRound(computerChoice, playerChoice) {
 
     if (computerChoice === 'rock') {
         if (playerChoice === 'rock') {
-            console.log(`Computer chose ${computerChoice}: it's a tie!`);
+            result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         } else if (playerChoice === 'paper') {
             playerScore++;
-            console.log(`Computer chose ${computerChoice}: you win!`);
+            result.innerText = `Computer chose ${computerChoice}: you win!`;
         } else {
             computerScore++;
-            console.log(`Computer chose ${computerChoice}: you lose!`);
+            result.innerText = `Computer chose ${computerChoice}: you lose!`;
         }
     } else if (computerChoice === 'paper') {
         if (playerChoice === 'rock') {
             computerScore++;
-            console.log(`Computer chose ${computerChoice}: you lose!`);
+            result.innerText = `Computer chose ${computerChoice}: you lose!`;
         } else if (playerChoice === 'paper') {
-            console.log(`Computer chose ${computerChoice}: it's a tie!`);
+            result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         } else {
             playerScore++;
-            console.log(`Computer chose ${computerChoice}: you win!`);
+            result.innerText = `Computer chose ${computerChoice}: you win!`;
         }
     } else {
         if (playerChoice === 'rock') {
             playerScore++;
-            console.log(`Computer chose ${computerChoice}: you win!`);
+            result.innerText = `Computer chose ${computerChoice}: you win!`;
         } else if (playerChoice === 'paper') {
             computerScore++;
-            console.log(`Computer chose ${computerChoice}: you lose!`);
+            result.innerText = `Computer chose ${computerChoice}: you lose!`;
         } else {
-            console.log(`Computer chose ${computerChoice}: it's a tie!`);
+            result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         }
     }
 }
@@ -102,9 +102,9 @@ function startOver() {
 
 function gameOver(status) {
     if (status === 'win') {
-        console.log("You won the game!")
+        result.innerText = "You won the game!"
     } else {
-        console.log("You lost the game!")
+        result.innerText = "You lost the game!"
     }
     currentlyPlaying = false;
     startButton.innerText = "Play again?"
