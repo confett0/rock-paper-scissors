@@ -4,6 +4,7 @@
 
 let computerScore = 0;
 let playerScore = 0;
+let currentlyPlaying = true;
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
@@ -22,8 +23,11 @@ function playRound(e) {
     const computerSelection = getComputerChoice();
     const playerSelection = e.target.id;
     winRound(computerSelection, playerSelection);
-    console.log(playerScore);
-    console.log(computerScore);
+    if (playerScore === 5) {
+        gameOver('win');
+    } else if (computerScore === 5) {
+        gameOver();
+    }
 }
 
 // Win round
@@ -63,8 +67,36 @@ function winRound(computerChoice, playerChoice) {
     }
 }
 
-// Get player choice 
+// Get player choice  
 
-rock.addEventListener('click',playRound);
-paper.addEventListener('click',playRound);
-scissors.addEventListener('click',playRound);
+rock.onclick = (e) => {
+    if (currentlyPlaying) {
+        playRound(e);
+    }
+};
+paper.onclick = (e) => {
+        if (currentlyPlaying) {
+            playRound(e);
+        }
+    };
+scissors.onclick = (e) => {
+    if (currentlyPlaying) {
+        playRound(e);
+    }
+};
+
+//rock.addEventListener('click',playRound);
+//paper.addEventListener('click',playRound);
+//scissors.addEventListener('click',playRound);
+
+//function gameOver that resets game, add if/else to onclick functions
+
+function gameOver(status) {
+    if (status === 'win') {
+        console.log("You won the game!")
+    } else {
+        console.log("You lost the game!")
+    }
+    currentlyPlaying = false;
+
+}
