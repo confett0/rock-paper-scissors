@@ -12,8 +12,21 @@
 <body>
     <h1 class="logo"><span class="pink">Rock</span> <span class="yellow">Paper</span> <span class="blue">Scissors</span></h1>
     <p>Can you beat the computer? The first to get 5 points wins!</p>
-    <div id="results"></div>
-    <div class="box player">
+    <div class="container">
+    <div class="score-box">
+<div class="player">
+        <img class="player-img" src="./images/cat.png">
+        <h2>Player</h2>
+        <p>Score: <span id="player-score">0</span></p>
+        </div>
+        <div class="computer">
+        <img class="player-img" src="./images/computer.png">
+        <h2>CPU</h2>
+        <p>Score: <span id="computer-score">0</span></p>
+        </div>
+    </div>
+        <div id="results">Make your move!</div>
+    </div>
     <div class="buttons">
         <div id="rock" class="button"><img src="./images/rock.png"></div>
         <div id="paper" class="button"><img src="./images/paper.png"></div>

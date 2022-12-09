@@ -10,6 +10,8 @@ const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const result = document.getElementById('results');
 const startButton = document.getElementById('start');
+const playerScoreDisplay = document.getElementById('player-score');
+const computerScoreDisplay = document.getElementById('computer-score');
 
 // Get computer choice
 
@@ -43,24 +45,30 @@ function winRound(computerChoice, playerChoice) {
             result.innerText = `Computer chose ${computerChoice}: you win!`;
         } else {
             computerScore++;
+            computerScoreDisplay.innerText = computerScore;
+            playerScoreDisplay.innerText = playerScore;
             result.innerText = `Computer chose ${computerChoice}: you lose!`;
         }
     } else if (computerChoice === 'paper') {
         if (playerChoice === 'rock') {
             computerScore++;
+            computerScoreDisplay.innerText = computerScore;
             result.innerText = `Computer chose ${computerChoice}: you lose!`;
         } else if (playerChoice === 'paper') {
             result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         } else {
             playerScore++;
+            playerScoreDisplay.innerText = playerScore;
             result.innerText = `Computer chose ${computerChoice}: you win!`;
         }
     } else {
         if (playerChoice === 'rock') {
             playerScore++;
+            playerScoreDisplay.innerText = playerScore;
             result.innerText = `Computer chose ${computerChoice}: you win!`;
         } else if (playerChoice === 'paper') {
             computerScore++;
+            computerScoreDisplay.innerText = computerScore;
             result.innerText = `Computer chose ${computerChoice}: you lose!`;
         } else {
             result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
@@ -96,6 +104,9 @@ function startOver() {
     computerScore = 0;
     playerScore = 0;
     currentlyPlaying = true;
+    playerScoreDisplay.innerText = 0;
+    computerScoreDisplay.innerText = 0;
+    result.innerText = "Make your move!"
     startButton.innerText = "Good luck!"
     getComputerChoice();
 }
@@ -111,5 +122,3 @@ function gameOver(status) {
 }
 
 startOver();
-
-// log results in document div instead of console
