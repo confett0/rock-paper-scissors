@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Source+Code+Pro&display=swap"
+        rel="stylesheet">
     <script src="main.js" defer></script>
 </head>
+
 <body>
-    <h1 class="logo"><span class="pink">Rock</span> <span class="yellow">Paper</span> <span class="blue">Scissors</span></h1>
-    <p>Can you beat the computer? The first to get 5 points wins!</p>
-    <div class="container">
-    <div class="score-box">
-<div class="player">
-        <img class="player-img" src="./images/cat.png">
-        <h2>Player</h2>
-        <p>Score: <span id="player-score">0</span></p>
+    <div class="content">
+        <h1 class="logo"><span class="pink">Rock</span> <span class="yellow">Paper</span> <span
+                class="blue">Scissors</span></h1>
+        <p>Can you beat the computer? The first to get 5 points wins!</p>
+        <div class="container">
+            <div class="score-box">
+                <div class="player">
+                    <img class="player-img" src="./images/cat.png">
+                    <h2>Player</h2>
+                    <p>Score: <span id="player-score">0</span></p>
+                </div>
+                <div><img id="player-move" class="move-img" src="./images/rock.png"></div>
+                <div><img id="computer-move" class="move-img" src="./images/rock.png"></div>
+                <div class="computer">
+                    <img class="player-img" src="./images/computer.png">
+                    <h2>CPU</h2>
+                    <p>Score: <span id="computer-score">0</span></p>
+                </div>
+            </div>
+            <div id="results">Make your move!</div>
         </div>
-        <div><img id="player-move" class="move-img" src="./images/rock.png"></div>
-<div><img id="computer-move" class="move-img" src="./images/rock.png"></div>
-        <div class="computer">
-        <img class="player-img" src="./images/computer.png">
-        <h2>CPU</h2>
-        <p>Score: <span id="computer-score">0</span></p>
+        <div class="buttons">
+            <div class="button"><img id="rock" src="./images/rock.png"></div>
+            <div class="button"><img id="paper" src="./images/paper.png"></div>
+            <div class="button"><img id="scissors" src="./images/scissors.png"></div>
         </div>
+        <div id="start">Good luck!</div>
     </div>
-        <div id="results">Make your move!</div>
-    </div>
-    <div id="player-move"><div>
-        <div id="computer-move"><div>
-    <div class="buttons">
-        <div class="button"><img id="rock" src="./images/rock.png"></div>
-        <div class="button"><img id="paper" src="./images/paper.png"></div>
-        <div class="button"><img id="scissors" src="./images/scissors.png"></div>
-    </div>
-</div>
-    <div id="start">Good luck!</div>
-
+    <footer>
+        <p>Copyright © <a href="https://github.com/confett0" target="_blank">confetto</a></p>
+    </footer>
 </body>
-
 </html>
