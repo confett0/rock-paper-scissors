@@ -12,6 +12,8 @@ const result = document.getElementById('results');
 const startButton = document.getElementById('start');
 const playerScoreDisplay = document.getElementById('player-score');
 const computerScoreDisplay = document.getElementById('computer-score');
+const playerMove = document.getElementById('player-move');
+const computerMove = document.getElementById('computer-move');
 
 // Get computer choice
 
@@ -38,39 +40,51 @@ function playRound(e) {
 function winRound(computerChoice, playerChoice) {
 
     if (computerChoice === 'rock') {
+        computerMove.src = "./images/move-rock.png";
         if (playerChoice === 'rock') {
+            playerMove.src = "./images/move-rock.png";
             result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         } else if (playerChoice === 'paper') {
+            playerMove.src = "./images/move-paper.png";
             playerScore++;
             result.innerText = `Computer chose ${computerChoice}: you win!`;
         } else {
+            playerMove.src = "./images/move-scissors.png";
             computerScore++;
             computerScoreDisplay.innerText = computerScore;
             playerScoreDisplay.innerText = playerScore;
             result.innerText = `Computer chose ${computerChoice}: you lose!`;
         }
     } else if (computerChoice === 'paper') {
+        computerMove.src = "./images/move-paper.png";
         if (playerChoice === 'rock') {
+            playerMove.src = "./images/move-rock.png";
             computerScore++;
             computerScoreDisplay.innerText = computerScore;
             result.innerText = `Computer chose ${computerChoice}: you lose!`;
         } else if (playerChoice === 'paper') {
+            playerMove.src = "./images/move-paper.png";
             result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         } else {
+            playerMove.src = "./images/move-scissors.png";
             playerScore++;
             playerScoreDisplay.innerText = playerScore;
             result.innerText = `Computer chose ${computerChoice}: you win!`;
         }
     } else {
+        computerMove.src = "./images/move-scissors.png";
         if (playerChoice === 'rock') {
+            playerMove.src = "./images/move-rock.png";
             playerScore++;
             playerScoreDisplay.innerText = playerScore;
             result.innerText = `Computer chose ${computerChoice}: you win!`;
         } else if (playerChoice === 'paper') {
+            playerMove.src = "./images/move-paper.png";
             computerScore++;
             computerScoreDisplay.innerText = computerScore;
             result.innerText = `Computer chose ${computerChoice}: you lose!`;
         } else {
+            playerMove.src = "./images/move-scissors.png";
             result.innerText = `Computer chose ${computerChoice}: it's a tie!`;
         }
     }
@@ -108,6 +122,7 @@ function startOver() {
     computerScoreDisplay.innerText = 0;
     result.innerText = "Make your move!"
     startButton.innerText = "Good luck!"
+    // reset move images
     getComputerChoice();
 }
 
